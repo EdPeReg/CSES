@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-	int n;
+	size_t n;
 	std::cin >> n;
 
 	while(n != 1) {
