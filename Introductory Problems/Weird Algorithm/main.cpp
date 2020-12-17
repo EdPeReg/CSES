@@ -1,3 +1,6 @@
+// https://cses.fi/problemset/task/1068/
+// Time: 20 min.
+
 #include <iostream>
 
 int main() {
