@@ -4,15 +4,15 @@
 
 int main() {
 	std::vector<int> nums;
-	int n, x;
+	size_t n, x;
 	std::cin >> n;
 
-	for(int i = 0; i < n; ++i) {
+	for(int i = 0; i < n-1; ++i) {
 		std::cin >> x;
 		nums.push_back(x);
 	}
 
-	for(int i = 1; i < nums.size(); ++i) {
+	for(int i = 1; i < n; ++i) {
 		if(std::find(nums.begin(), nums.end(), i) == nums.end()) {
 			std::cout << i << '\n';
 			break;
