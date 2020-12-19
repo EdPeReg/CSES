@@ -1,19 +1,26 @@
 // https://cses.fi/problemset/task/1069
-// Time 14:37m
+// Time 24m
 
 #include <iostream>
 #include <algorithm>
+#include <vector>
 
 int main() {
+	std::vector<int> nums;
 	std::string dna;
 	std::cin >> dna;
 
-	int countA = std::count(dna.begin(), dna.end(), 'A');
-	int countT = std::count(dna.begin(), dna.end(), 'T');
-	int countC = std::count(dna.begin(), dna.end(), 'C');
-	int countG = std::count(dna.begin(), dna.end(), 'G');
-	
-	std::cout << std::max({countA, countT, countC, countG});
+	int count = 1;
+	for(size_t i = 0; i < dna.size()-1; ++i) {
+		if(dna.at(i) == dna.at(i+1)) {
+			++count;
+		} else {
+			nums.push_back(count);
+			count = 1;
+		}
+	}
+
+	std::cout << *std::max_element(nums.begin(), nums.end());
 
 	return 0;
 }
