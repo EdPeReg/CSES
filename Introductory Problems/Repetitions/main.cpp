@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <vector>
 
+
 int main() {
 	std::vector<int> nums;
 	std::string dna;
