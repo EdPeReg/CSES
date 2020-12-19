@@ -1,3 +1,15 @@
+// https://cses.fi/problemset/task/1083/
+// Time: 30m.
+// 
+// Using a set for find, instead vector to use std::find did a lot of difference
+// when there are 200000 elements.
+//
+// std::find = O(n)
+// find() = (O(log N)).
+//
+// std::vector() = doesn't have its elements sorted.
+// std::set() = its elements are sorted.
+
 #include <iostream>
 #include <algorithm>
 #include <set>
