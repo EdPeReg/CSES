@@ -1,19 +1,19 @@
 #include <iostream>
 #include <algorithm>
-#include <vector>
+#include <set>
 
 int main() {
-	std::vector<int> nums;
+	std::set<int> nums;
 	size_t n, x;
 	std::cin >> n;
 
-	for(int i = 0; i < n-1; ++i) {
+	for(size_t i = 0; i < n-1; ++i) {
 		std::cin >> x;
-		nums.push_back(x);
+		nums.insert(x);
 	}
 
-	for(int i = 1; i < n; ++i) {
-		if(std::find(nums.begin(), nums.end(), i) == nums.end()) {
+	for(int i = 1; i <= n; ++i) {
+		if(nums.find(i) == nums.end()) {
 			std::cout << i << '\n';
 			break;
 		}
