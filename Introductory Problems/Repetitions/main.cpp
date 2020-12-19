@@ -1,5 +1,5 @@
 // https://cses.fi/problemset/task/1069
-// Time 24m
+// Time 30m
 
 #include <iostream>
 #include <algorithm>
@@ -14,9 +14,10 @@ int main() {
 	for(size_t i = 0; i < dna.size()-1; ++i) {
 		if(dna.at(i) == dna.at(i+1)) {
 			++count;
-		} else {
 			nums.push_back(count);
+		} else {
 			count = 1;
+			nums.push_back(count);
 		}
 	}
 
