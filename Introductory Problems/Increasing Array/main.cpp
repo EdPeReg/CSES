@@ -1,3 +1,6 @@
+// https://cses.fi/problemset/result/1408424/
+// Time: 30m
+
 #include <iostream>
 
 using namespace std;
