@@ -1,10 +1,19 @@
 // https://cses.fi/problemset/task/1070
-// Time: 30m
+// Time: 2 days.
+
+/* 
+ * One approach is to generate each permutation of 1 to n. Using
+ * std::next_permutation(), and trying to do the operation for each
+ * number. That can work for small numbers, not for huge numbers.
+ *
+ * There is a pattern, you can see that there are only two cases without
+ * solution, n = 2, n = 3.
+ *
+ * The pattern is to put first all even numbers, and put all odd numbers.
+ * */
 
 #include <iostream>
-#include <algorithm>
 #include <vector>
-#include <cstdlib>
 
 int main() {
 	size_t n;
