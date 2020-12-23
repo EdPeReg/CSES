@@ -8,30 +8,29 @@
 
 int main() {
 	size_t n;
-	std::vector<size_t> v;
+	std::vector<size_t> v1;
+	std::vector<size_t> v2;
 	std::cin >> n;
 
 	for(size_t i = 1; i <= n; ++i) {
-		v.push_back(i);
+		if(i % 2 == 1) {
+			v1.push_back(i);
+		} else {
+			v2.push_back(i);
+		}
 	}
-
-	do {
-		bool find = true;
-		for(size_t i = 1; i < v.size(); ++i) {
-			if(abs(v.at(i) - v.at(i-1)) == 1) {
-				find = false;
-				break;
-			} 
+	if(n == 2 or n == 3) {
+		std::cout << "NO SOLUTION\n";
+	} else {
+		for(auto& e : v2) {
+			std::cout << e << " ";
 		}
 
-		if(find) {
-			for(const auto& e : v) {
-				std::cout << e << " ";
-			}
-			std::cout << '\n';
-			break;
-		} 
-	} while(std::next_permutation(v.begin(), v.end()));
-	
+		for(auto& e : v1) {
+			std::cout << e << " ";
+		}
+	}
+
 	return 0;
+
 }
