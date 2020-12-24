@@ -1,27 +1,28 @@
 // https://cses.fi/problemset/task/1071
-// Time: 12m.
+// Time: 1 day.
+// Explanation: https://codegolf.stackexchange.com/questions/170794/number-spiral-problem
+// I used MATL, 15 bytes.
+// Only a little change:
+// even = v + y - x
+// odd  = v - y + x
 
 #include <iostream>
+#include <algorithm>
 
 int main() {
-	int grid[5][5] = {{1,2,9,10,25},
-					  {4,3,8,11,24},
-					  {5,6,7,12,23},
-					  {16,15,14,13,22},
-					  {17,18,19,20,21}};
-
-	int t,x,y;
+	size_t t,x,y;
 	std::cin >> t;
 
 	while(t--) {
-		std::cin >> x >> y;
-		for(int i = 0; i < 5; ++i) {
-			for(int j = 0; j < 5; ++j) {
-				if(i+1 == x and j+1 == y) {
-					std::cout << grid[i][j] << '\n';
-					break;
-				}
-			}
+		std::cin >> y >> x;
+
+		size_t n = std::max(y,x);
+		size_t v = n*(n-1)+1;	
+
+		if(n % 2) {
+			std::cout << v - y + x << '\n';
+		} else {
+			std::cout << v + y - x << '\n';
 		}
 	}
 
