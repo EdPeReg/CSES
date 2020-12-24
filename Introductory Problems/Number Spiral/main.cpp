@@ -15,7 +15,6 @@ int main() {
 
 	while(t--) {
 		std::cin >> y >> x;
-
 		size_t n = std::max(y,x);
 		size_t v = n*(n-1)+1;	
 
