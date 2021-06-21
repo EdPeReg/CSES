@@ -1,6 +1,7 @@
 // https://cses.fi/problemset/task/1071
 // Time: 1 day.
 // Explanation: https://codegolf.stackexchange.com/questions/170794/number-spiral-problem
+// https://www.programmingresources.tech/2020/08/cses-number-spiral-problem-solution.html
 // I used MATL, 15 bytes.
 // Only a little change:
 // even = v + y - x
@@ -16,7 +17,7 @@ int main() {
 	while(t--) {
 		std::cin >> y >> x;
 		size_t n = std::max(y,x);
-		size_t v = n*(n-1)+1;	
+		size_t v = n*(n-1)+1;     // Get diagonal number from n.
 
 		if(n % 2) {
 			std::cout << v - y + x << '\n';
