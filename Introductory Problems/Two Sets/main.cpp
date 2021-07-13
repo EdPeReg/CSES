@@ -1,28 +1,46 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
-std::vector<int> subset;
-// Search begin when function is called with parameter 1.
-void search(int k, int n) {
-	if(k == n+1) {
-		// Process subset.
-		for(auto e : subset) {
-			std::cout << e << " ";
-		}
-		std::cout << '\n';
-	} else {
-		// Include k in the subset.
-		subset.push_back(k);
-		search(k+1, n);
-		subset.pop_back();
-		search(k+1, n);
-	}
-}
+using namespace std;
 
-int main() {
-	size_t n;
-	std::cin >> n;
-	search(1, n);
+int main() 
+{
+    long long n, target, c1 = 0, c2 = 0;
+    vector<long long> v1, v2;
+    cin >> n;
 
-	return 0;
+    target = n * (n+1) / 4;
+    if((n * (n+1) / 2) % 2 == 0) 
+    {
+        cout << "YES" << '\n';
+        for(long long i = n; i > 0; --i) 
+        {
+            if(target - i >= 0) 
+            {
+                v1.push_back(i);
+                target -= i;
+            } 
+            else 
+                v2.push_back(i);
+        }
+
+        cout << v1.size() << '\n';
+        for(const long long& e : v1) 
+        {
+            cout << e << ' ';
+        }
+
+        cout << '\n' << v2.size() << '\n';
+        for(const long long& e : v2) 
+        {
+            cout << e << ' ';
+        }
+    } 
+    else 
+    {
+        cout << "NO\n";
+    }
+
+    return 0;
 }
