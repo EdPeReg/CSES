@@ -6,7 +6,7 @@ using namespace std;
 
 int main() 
 {
-    long long n, target, c1 = 0, c2 = 0;
+    long long n, target;
     vector<long long> v1, v2;
     cin >> n;
 
