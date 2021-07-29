@@ -12,6 +12,4 @@ int main() {
     }
 
     std::cout << sum + 1<< '\n';
-
-    return 0;
 }
