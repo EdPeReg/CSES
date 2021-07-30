@@ -1,17 +1,15 @@
 #include <iostream>
 
 int main() {
-    long long n;
+    unsigned long long n;
     std::cin >> n;
 
-    long long aux = 1;
-    long long sum = 0;
-    for(long long i = 0; i < n; ++i) {
-        sum += aux;
-        aux <<= 1;
+    unsigned long long answer = 1;
+    for(unsigned long long i = 0; i < n; ++i) {
+        answer = (answer * 2) % ((long long) 1e9 + 7);
     }
 
-    std::cout << sum + 1 << '\n';
+    std::cout << answer << '\n';
 
     return 0;
 }
