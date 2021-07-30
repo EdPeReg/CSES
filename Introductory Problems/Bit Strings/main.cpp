@@ -6,12 +6,12 @@ int main() {
 
     long long aux = 1;
     long long sum = 0;
-    for(int i = 0; i < n; ++i) {
+    for(long long i = 0; i < n; ++i) {
         sum += aux;
-        aux *= 2;
+        aux <<= 1;
     }
 
-    std::cout << sum + 1<< '\n';
+    std::cout << sum + 1 << '\n';
 
     return 0;
 }
