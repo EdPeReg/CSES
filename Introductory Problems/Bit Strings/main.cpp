@@ -6,6 +6,7 @@ int main() {
 
     unsigned long long answer = 1;
     for(unsigned long long i = 0; i < n; ++i) {
+        // Modulo to avoid overflow.
         answer = (answer * 2) % ((long long) 1e9 + 7);
     }
 
