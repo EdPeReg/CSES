@@ -8,7 +8,7 @@ int main()
 {
     int n, c = 1;
     std::cin >> n;
-    std::vector<int> v(n,0);
+    std::vector<int> v(n);
 
     for(size_t i = 0; i < n; ++i) {
         std::cin >> v[i];
@@ -16,10 +16,9 @@ int main()
     std::sort(v.begin(), v.end());
 
     for(size_t i = 1; i < n; ++i) 
-    {
-        if(v[i] != v[i-1]) 
-            ++c;
-    }
+        // True = 1, false = 0, everytime that expression returns
+        // true, we will increment by one our counter.
+        c += (v[i] != v[i-1]);
 
     std::cout << c;
 
