@@ -6,7 +6,7 @@
 #include <vector>
 
 int main() {
-    unsigned long mod = 10e9 + 7;
+    unsigned long mod = 1e9 + 7;
     int n;
     std::cin >> n;
 
