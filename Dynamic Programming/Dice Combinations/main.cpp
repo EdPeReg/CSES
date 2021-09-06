@@ -19,6 +19,5 @@ int main() {
                 comb[i] = (comb[i] + comb[i-j]) % mod;
     
     std::cout << comb[n];
-
     return 0;
 }
