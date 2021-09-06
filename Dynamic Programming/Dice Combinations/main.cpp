@@ -10,7 +10,7 @@ int main() {
     int n;
     std::cin >> n;
 
-    std::vector<int> comb(n+1, 0);
+    std::vector<long long> comb(n+1, 0);
     comb[0] = 1;
 
     for(int i = 1; i <= n; ++i) 
